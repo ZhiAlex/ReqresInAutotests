@@ -14,8 +14,7 @@ public class DeleteUserTest : BaseTest
     {
         int id = 2;
 
-        var createUser = new RestRequest("/api/users/" + id, Method.Delete)
-            .AddHeader("Content-Type", ContentType.Json);
+        var createUser = new RestRequest("/api/users/" + id, Method.Delete);
         var response = await Client.DeleteAsync(createUser);
 
         Assert.AreEqual(HttpStatusCode.NoContent, response.StatusCode);
