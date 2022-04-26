@@ -18,7 +18,7 @@ public class UpdateUserTest : BaseTest
         int id = 2;
         var userData = new UserData().CreateUserData();
 
-        var createUser = new RestRequest("/api/users/" + id, Method.Put)
+        var updateUser = new RestRequest("/api/users/" + id, Method.Put)
             .AddHeader("Content-Type", ContentType.Json)
             .AddJsonBody(userData);
         var response = await Client.PutAsync(createUser);
