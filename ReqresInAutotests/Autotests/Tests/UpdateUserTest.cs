@@ -21,7 +21,7 @@ public class UpdateUserTest : BaseTest
         var updateUser = new RestRequest("/api/users/" + id, Method.Put)
             .AddHeader("Content-Type", ContentType.Json)
             .AddJsonBody(userData);
-        var response = await Client.PutAsync(createUser);
+        var response = await Client.PutAsync(updateUser);
         var UserResponseData = JsonSerializer.Deserialize<UpdateUserResponse>(response.Content);
 
         Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
